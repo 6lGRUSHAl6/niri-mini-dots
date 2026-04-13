@@ -114,6 +114,18 @@ tooltip label {
 #pulseaudio:hover {
     color: @lavender;
 }
+#bluetooth {
+    color: @lavender;
+    padding: 0 10px;
+}
+
+#bluetooth.disabled {
+    color: @muted;
+}
+
+#bluetooth.connected {
+    color: @pink;
+}
 
 /* ── CPU ───────────────────────────────────────────────────── */
 #cpu {
