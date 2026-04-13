@@ -1,6 +1,7 @@
 alacritty
 base
 base-devel
+blueman
 bluez
 bluez-utils
 discord
@@ -42,4 +43,6 @@ wireplumber
 wl-clipboard
 woff2-font-awesome
 xdg-utils
+yay
+yay-debug
 zram-generator
