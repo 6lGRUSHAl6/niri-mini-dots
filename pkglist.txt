@@ -8,6 +8,7 @@ discord
 efibootmgr
 fastfetch
 firefox
+fish
 fuzzel
 git
 grim

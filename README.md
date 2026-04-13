@@ -17,6 +17,7 @@
  - `niri/` - конфиг самого Niri
  - `waybar/` - панелька сверху
  - `alacritty/` - терминал
+ - `fish/` - крутой шелл
 
 ### Как установить?
  - клонируем репо
@@ -35,7 +36,16 @@ cp -r niri-mini-dots/waybar ~/.config/
 ```bash
 cp -r niri-mini-dots/alacritty ~/.config/
 ```
+ - ставим конфиг fish
+```bash
+cp -r niri-mini-dots/fish ~/.config/
+
  - закачиваем пакеты
 ```bash
 sudo pacman -S --needed - < pkglist.txt
+```
+
+ - меняем шелл
+```bash
+chsh -s $(which fish)
 ```
