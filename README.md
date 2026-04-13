@@ -1,6 +1,10 @@
 # niri-mini-dots
 
+<div align="center">
+
 [![niri](https://img.shields.io/badge/niri-6750A4?style=flat-square&logo=wayland&logoColor=white)](https://github.com/YaLTeR/niri)
+
+</div>
 
 ## Это самый простой, максимально минималистичный конфиг для [Niri](https://github.com/YaLTeR/niri)
 в нем я ориентировался только на удобство пользователю и легкость в установке
