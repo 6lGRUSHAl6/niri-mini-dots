@@ -1,0 +1,201 @@
+/* ── Variables ─────────────────────────────────────────────── */
+@define-color base      #0f0e14;
+@define-color surface   #1a1825;
+@define-color overlay   #241f33;
+@define-color muted     #6e6a86;
+@define-color subtle    #908caa;
+@define-color text      #e0ddf0;
+@define-color pink      #e8a0c0;
+@define-color mauve     #c4a0e8;
+@define-color lavender  #a0b0e8;
+@define-color rose      #f0607a;
+
+/* ── Reset ─────────────────────────────────────────────────── */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Iosevka", "monospace";
+    font-size: 12px;
+    font-weight: 400;
+    min-height: 0;
+    transition: all 150ms ease;
+}
+
+/* ── Window / Root ─────────────────────────────────────────── */
+window#waybar {
+    background: alpha(@base, 0.92);
+    color: @text;
+    border-radius: 10px;
+    border: 1px solid alpha(@overlay, 0.8);
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* ── Tooltip ───────────────────────────────────────────────── */
+tooltip {
+    background: @surface;
+    border: 1px solid @overlay;
+    border-radius: 8px;
+    color: @text;
+}
+
+tooltip label {
+    color: @text;
+}
+
+/* ── Generic Module ────────────────────────────────────────── */
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0 6px;
+}
+
+/* ── Workspaces ────────────────────────────────────────────── */
+#workspaces {
+    padding: 0 6px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: @muted;
+    background: transparent;
+    font-size: 10px;
+}
+
+#workspaces button:hover {
+    color: @pink;
+    background: alpha(@overlay, 0.5);
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    color: @pink;
+    font-size: 10px;
+}
+
+#workspaces button.urgent {
+    color: @rose;
+}
+
+/* ── Window title ──────────────────────────────────────────── */
+#window {
+    color: @subtle;
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+/* ── Clock ─────────────────────────────────────────────────── */
+#clock {
+    color: @text;
+    font-weight: 500;
+    padding: 0 14px;
+    letter-spacing: 0.03em;
+}
+
+/* ── Right modules base ────────────────────────────────────── */
+#cpu,
+#memory,
+#battery,
+#network,
+#pulseaudio,
+#tray,
+#custom-power {
+    padding: 0 10px;
+    color: @subtle;
+}
+
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover {
+    color: @lavender;
+}
+
+/* ── CPU ───────────────────────────────────────────────────── */
+#cpu {
+    color: @lavender;
+}
+
+/* ── Memory ────────────────────────────────────────────────── */
+#memory {
+    color: @mauve;
+}
+
+/* ── Battery ───────────────────────────────────────────────── */
+#battery {
+    color: @subtle;
+}
+
+#battery.charging {
+    color: @pink;
+}
+
+#battery.warning:not(.charging) {
+    color: #e8c06a;
+}
+
+#battery.critical:not(.charging) {
+    color: @rose;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    to { opacity: 0.4; }
+}
+
+/* ── Network ───────────────────────────────────────────────── */
+#network {
+    color: @subtle;
+}
+
+#network.wifi {
+    color: @pink;
+}
+
+#network.disconnected {
+    color: @muted;
+}
+
+/* ── Audio ─────────────────────────────────────────────────── */
+#pulseaudio {
+    color: @subtle;
+}
+
+#pulseaudio.muted {
+    color: @muted;
+}
+
+/* ── Tray ──────────────────────────────────────────────────── */
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @rose;
+}
+
+/* ── Power button ──────────────────────────────────────────── */
+#custom-power {
+    color: @muted;
+    padding: 0 12px 0 8px;
+    font-size: 14px;
+}
+
+#custom-power:hover {
+    color: @rose;
+}
+
+/* ── Separators (optional left border for right modules) ───── */
+#cpu,
+#memory {
+    border-left: 1px solid alpha(@overlay, 0.6);
+}
